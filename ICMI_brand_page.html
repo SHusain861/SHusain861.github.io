@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ICMI — Indian Carpet Manufacturing Industries</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--f:"Helvetica Neue",Helvetica,Arial,sans-serif;--ink:#1A1A1A;--mid:#555551;--muted:#888884;--rule:#DDDDD8;--bg:#F8F7F4;--bg2:#EFEEEA}
+body{font-family:var(--f);background:var(--bg);color:var(--ink)}
+.wb{max-width:680px;margin:0 auto}
+
+.hero{padding:80px 60px 72px;text-align:center;border-bottom:1px solid var(--rule)}
+.h-pre{font-size:8px;font-weight:400;letter-spacing:5px;color:var(--muted);text-transform:uppercase;margin-bottom:28px}
+.h-title{font-size:40px;font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:10px;letter-spacing:-1px}
+.h-sub{font-size:40px;font-weight:300;color:var(--mid);line-height:1.1;margin-bottom:28px;letter-spacing:-1px}
+.h-rule{width:32px;height:1px;background:var(--ink);margin:0 auto 24px}
+.h-tag{font-size:7.5px;font-weight:400;letter-spacing:5px;color:var(--muted);text-transform:uppercase}
+
+.tech-strip{display:flex;border-bottom:1px solid var(--rule)}
+.tc{flex:1;padding:22px 16px;text-align:center;border-right:1px solid var(--rule)}
+.tc:last-child{border-right:none}
+.tc-name{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--ink);text-transform:uppercase;margin-top:12px;margin-bottom:4px}
+.tc-sub{font-size:8px;font-weight:300;color:var(--muted);letter-spacing:1px}
+
+.sec{padding:56px 60px;border-bottom:1px solid var(--rule)}
+.sec-alt{padding:56px 60px;border-bottom:1px solid var(--rule);background:var(--bg2)}
+.ey{font-size:7.5px;font-weight:400;letter-spacing:5px;color:var(--muted);text-transform:uppercase;margin-bottom:20px}
+.sh{font-size:26px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:8px;letter-spacing:-0.5px}
+.sh-light{font-size:26px;font-weight:300;color:var(--mid);line-height:1.2;margin-bottom:24px;letter-spacing:-0.5px}
+.bp{font-size:13px;font-weight:300;line-height:1.95;color:var(--mid);margin-bottom:14px}
+.bp b{font-weight:700;color:var(--ink)}
+.qblock{margin:32px 0;padding:0 0 0 20px;border-left:1px solid var(--ink)}
+.qblock p{font-size:16px;font-weight:300;font-style:italic;color:var(--ink);line-height:1.7}
+
+.tech-detail{display:grid;grid-template-columns:1fr 1fr;margin-top:28px;border:1px solid var(--rule)}
+.td{padding:28px 24px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.td:nth-child(even){border-right:none}
+.td:nth-child(3),.td:nth-child(4){border-bottom:none}
+.td-doodle{margin-bottom:14px}
+.td-title{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--ink);text-transform:uppercase;margin-bottom:8px}
+.td-desc{font-size:12px;font-weight:300;color:var(--mid);line-height:1.75}
+
+.gen-band{padding:56px 60px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:48px}
+.gen-num{font-size:80px;font-weight:700;color:var(--ink);line-height:1;letter-spacing:-4px;flex-shrink:0}
+.gen-label{font-size:8px;font-weight:400;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.gen-divider{width:1px;background:var(--rule);align-self:stretch;flex-shrink:0}
+.gen-title{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.5px}
+.gen-body{font-size:13px;font-weight:300;color:var(--mid);line-height:1.85}
+
+.motto{padding:48px 60px;border-bottom:1px solid var(--rule);text-align:center;background:var(--ink)}
+.motto-text{font-size:20px;font-weight:300;color:var(--bg);letter-spacing:0.5px;line-height:1.6;font-style:italic}
+.motto-rule{width:32px;height:1px;background:#444440;margin:20px auto 0}
+
+.studio{padding:64px 60px;text-align:center;border-bottom:1px solid var(--rule)}
+.st-wrap{display:inline-flex;align-items:center;gap:16px;margin-bottom:6px}
+.st-stroke{width:1px;height:36px;background:var(--ink)}
+.st{font-size:26px;font-weight:700;color:var(--ink);letter-spacing:6px}
+.ss{font-size:7px;font-weight:400;letter-spacing:4px;color:var(--muted);text-transform:uppercase;margin-bottom:28px}
+.sd{font-size:13px;font-weight:300;color:var(--mid);line-height:1.9;max-width:380px;margin:0 auto 28px}
+.pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.pill{font-size:7.5px;font-weight:400;letter-spacing:2.5px;color:var(--muted);text-transform:uppercase;padding:7px 14px;border:1px solid var(--rule)}
+
+.cta{padding:64px 60px;text-align:center;background:var(--ink)}
+.ct{font-size:28px;font-weight:700;color:var(--bg);line-height:1.2;margin-bottom:6px;letter-spacing:-0.5px}
+.ct-light{font-size:28px;font-weight:300;color:#888884;line-height:1.2;margin-bottom:28px;letter-spacing:-0.5px}
+.cs{font-size:8px;font-weight:400;letter-spacing:3px;color:#555551;text-transform:uppercase;margin-bottom:32px}
+.btn{display:inline-block;font-size:8px;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:13px 30px;cursor:pointer;margin:5px;text-decoration:none}
+.btn.solid{background:var(--bg);color:var(--ink)}
+.btn.outline{border:1px solid #444440;color:#888884}
+.foot{font-size:7px;letter-spacing:3px;color:#333330;text-transform:uppercase;margin-top:32px}
+</style>
+</head>
+<body>
+<div class="wb">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="h-pre">Est. Fifth Generation · India</div>
+    <div class="h-title">Weaving the Future</div>
+    <div class="h-sub">on the Loom of Today.</div>
+    <div class="h-rule"></div>
+    <div class="h-tag">Indian Carpet Manufacturing Industries</div>
+  </div>
+
+  <!-- TECHNIQUE STRIP -->
+  <div class="tech-strip">
+    <div class="tc">
+      <svg width="48" height="40" viewBox="0 0 48 40">
+        <line x1="8" y1="4" x2="8" y2="36" stroke="#1A1A1A" stroke-width="1"/>
+        <line x1="16" y1="4" x2="16" y2="36" stroke="#1A1A1A" stroke-width="1"/>
+        <line x1="24" y1="4" x2="24" y2="36" stroke="#1A1A1A" stroke-width="1"/>
+        <line x1="32" y1="4" x2="32" y2="36" stroke="#1A1A1A" stroke-width="1"/>
+        <line x1="40" y1="4" x2="40" y2="36" stroke="#1A1A1A" stroke-width="1"/>
+        <line x1="4" y1="12" x2="44" y2="12" stroke="#888884" stroke-width="0.8"/>
+        <line x1="4" y1="20" x2="44" y2="20" stroke="#888884" stroke-width="0.8"/>
+        <line x1="4" y1="28" x2="44" y2="28" stroke="#888884" stroke-width="0.8"/>
+        <circle cx="8" cy="12" r="2" fill="#1A1A1A"/>
+        <circle cx="24" cy="20" r="2" fill="#1A1A1A"/>
+        <circle cx="40" cy="12" r="2" fill="#1A1A1A"/>
+        <circle cx="16" cy="28" r="2" fill="#1A1A1A"/>
+        <circle cx="32" cy="20" r="2" fill="#1A1A1A"/>
+      </svg>
+      <div class="tc-name">Hand Knotted</div>
+      <div class="tc-sub">Luxury · Export</div>
+    </div>
+    <div class="tc">
+      <svg width="48" height="40" viewBox="0 0 48 40">
+        <rect x="6" y="6" width="36" height="28" rx="0" fill="none" stroke="#888884" stroke-width="0.8"/>
+        <line x1="6" y1="14" x2="42" y2="14" stroke="#888884" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <line x1="6" y1="22" x2="42" y2="22" stroke="#888884" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <line x1="6" y1="30" x2="42" y2="30" stroke="#888884" stroke-width="0.5" stroke-dasharray="2 2"/>
+        <path d="M10 6 Q12 2 14 6" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+        <path d="M18 6 Q20 2 22 6" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+        <path d="M26 6 Q28 2 30 6" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+        <path d="M34 6 Q36 2 38 6" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+      </svg>
+      <div class="tc-name">Hand Tufted</div>
+      <div class="tc-sub">Volume · Precision</div>
+    </div>
+    <div class="tc">
+      <svg width="48" height="40" viewBox="0 0 48 40">
+        <line x1="6" y1="8" x2="42" y2="8" stroke="#1A1A1A" stroke-width="1.2"/>
+        <line x1="6" y1="32" x2="42" y2="32" stroke="#1A1A1A" stroke-width="1.2"/>
+        <line x1="10" y1="8" x2="10" y2="32" stroke="#888884" stroke-width="0.7"/>
+        <line x1="18" y1="8" x2="18" y2="32" stroke="#888884" stroke-width="0.7"/>
+        <line x1="26" y1="8" x2="26" y2="32" stroke="#888884" stroke-width="0.7"/>
+        <line x1="34" y1="8" x2="34" y2="32" stroke="#888884" stroke-width="0.7"/>
+        <line x1="42" y1="8" x2="42" y2="32" stroke="#888884" stroke-width="0.7"/>
+        <path d="M6 14 Q14 10 22 14 Q30 18 38 14 Q40 13 42 14" fill="none" stroke="#1A1A1A" stroke-width="0.9"/>
+        <path d="M6 22 Q14 18 22 22 Q30 26 38 22 Q40 21 42 22" fill="none" stroke="#1A1A1A" stroke-width="0.9"/>
+      </svg>
+      <div class="tc-name">Hand Loom</div>
+      <div class="tc-sub">Structure · Finish</div>
+    </div>
+    <div class="tc">
+      <svg width="48" height="40" viewBox="0 0 48 40">
+        <rect x="8" y="6" width="32" height="28" rx="0" fill="none" stroke="#888884" stroke-width="0.7"/>
+        <line x1="8" y1="13" x2="40" y2="13" stroke="#1A1A1A" stroke-width="0.7"/>
+        <line x1="8" y1="20" x2="40" y2="20" stroke="#888884" stroke-width="0.5"/>
+        <line x1="8" y1="27" x2="40" y2="27" stroke="#1A1A1A" stroke-width="0.7"/>
+        <line x1="18" y1="6" x2="18" y2="34" stroke="#1A1A1A" stroke-width="0.7"/>
+        <line x1="30" y1="6" x2="30" y2="34" stroke="#888884" stroke-width="0.5"/>
+        <path d="M4 3 L8 6" stroke="#1A1A1A" stroke-width="0.8"/>
+        <path d="M4 37 L8 34" stroke="#1A1A1A" stroke-width="0.8"/>
+        <circle cx="4" cy="20" r="1.5" fill="#1A1A1A"/>
+      </svg>
+      <div class="tc-name">Bespoke</div>
+      <div class="tc-sub">Custom · Design</div>
+    </div>
+  </div>
+
+  <!-- WHO WE ARE -->
+  <div class="sec">
+    <div class="ey">Who We Are</div>
+    <div class="sh">A manufacturer built</div>
+    <div class="sh-light">on five generations of craft.</div>
+    <div class="bp"><b>Indian Carpet Manufacturing Industries</b> is an export-focused carpet manufacturer. Five generations of craft knowledge underpin every production decision we make — from material selection to the final quality check before shipment.</div>
+    <div class="bp">We operate across the full range of handmade carpet techniques, supplying importers, wholesalers, interior firms, and hospitality procurement teams across international markets.</div>
+    <div class="qblock">
+      <p>"Craftsmanship is not a claim we make. It is a standard our looms have held for five generations."</p>
+    </div>
+  </div>
+
+  <!-- OUR CRAFT -->
+  <div class="sec-alt">
+    <div class="ey">Our Craft</div>
+    <div class="sh">Proudly</div>
+    <div class="sh-light">hand-crafted.</div>
+    <div class="bp">Every carpet we produce is made entirely by hand — no shortcuts, no automation, no compromise. From the first knot to the final inspection, each piece is the result of skilled craft labour refined across generations of practice.</div>
+    <div class="tech-detail">
+      <div class="td">
+        <div class="td-doodle">
+          <svg width="52" height="44" viewBox="0 0 52 44">
+            <line x1="10" y1="4" x2="10" y2="40" stroke="#1A1A1A" stroke-width="1"/>
+            <line x1="20" y1="4" x2="20" y2="40" stroke="#1A1A1A" stroke-width="1"/>
+            <line x1="30" y1="4" x2="30" y2="40" stroke="#1A1A1A" stroke-width="1"/>
+            <line x1="40" y1="4" x2="40" y2="40" stroke="#1A1A1A" stroke-width="1"/>
+            <line x1="4" y1="14" x2="46" y2="14" stroke="#888884" stroke-width="0.7"/>
+            <line x1="4" y1="24" x2="46" y2="24" stroke="#888884" stroke-width="0.7"/>
+            <line x1="4" y1="34" x2="46" y2="34" stroke="#888884" stroke-width="0.7"/>
+            <circle cx="10" cy="14" r="2.5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+            <circle cx="30" cy="24" r="2.5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+            <circle cx="20" cy="34" r="2.5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+            <circle cx="40" cy="14" r="2.5" fill="#1A1A1A"/>
+            <circle cx="20" cy="24" r="2.5" fill="#1A1A1A"/>
+            <circle cx="40" cy="34" r="2.5" fill="#1A1A1A"/>
+          </svg>
+        </div>
+        <div class="td-title">Hand Knotted</div>
+        <div class="td-desc">The pinnacle of carpet craft. Each knot is individually tied by a skilled artisan — a process requiring years of training. Unmatched durability, depth, and luxury. The foundation of our export offering.</div>
+      </div>
+      <div class="td">
+        <div class="td-doodle">
+          <svg width="52" height="44" viewBox="0 0 52 44">
+            <rect x="6" y="8" width="40" height="28" rx="0" fill="none" stroke="#888884" stroke-width="0.8"/>
+            <line x1="6" y1="18" x2="46" y2="18" stroke="#888884" stroke-width="0.5" stroke-dasharray="3 2"/>
+            <line x1="6" y1="28" x2="46" y2="28" stroke="#888884" stroke-width="0.5" stroke-dasharray="3 2"/>
+            <path d="M12 8 Q14 3 16 8" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+            <path d="M21 8 Q23 3 25 8" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+            <path d="M30 8 Q32 3 34 8" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+            <path d="M39 8 Q41 3 43 8" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+            <line x1="26" y1="3" x2="26" y2="44" stroke="#1A1A1A" stroke-width="0.5" stroke-dasharray="1 3"/>
+          </svg>
+        </div>
+        <div class="td-title">Hand Tufted</div>
+        <div class="td-desc">Precision tufting for high-volume contracts without compromising finish. Ideal for hospitality, commercial, and residential projects. Faster lead times, consistent output, dependable quality at scale.</div>
+      </div>
+      <div class="td">
+        <div class="td-doodle">
+          <svg width="52" height="44" viewBox="0 0 52 44">
+            <line x1="6" y1="8" x2="46" y2="8" stroke="#1A1A1A" stroke-width="1.2"/>
+            <line x1="6" y1="36" x2="46" y2="36" stroke="#1A1A1A" stroke-width="1.2"/>
+            <line x1="12" y1="8" x2="12" y2="36" stroke="#888884" stroke-width="0.7"/>
+            <line x1="20" y1="8" x2="20" y2="36" stroke="#888884" stroke-width="0.7"/>
+            <line x1="28" y1="8" x2="28" y2="36" stroke="#888884" stroke-width="0.7"/>
+            <line x1="36" y1="8" x2="36" y2="36" stroke="#888884" stroke-width="0.7"/>
+            <line x1="44" y1="8" x2="44" y2="36" stroke="#888884" stroke-width="0.7"/>
+            <path d="M6 16 Q14 12 22 16 Q30 20 38 16 Q42 14 46 16" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+            <path d="M6 26 Q14 22 22 26 Q30 30 38 26 Q42 24 46 26" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="td-title">Hand Loom</div>
+        <div class="td-desc">Traditional loom weaving delivering structural integrity and a refined surface finish. Highly adaptable across floor applications and interior specifications. A staple of our export range.</div>
+      </div>
+      <div class="td">
+        <div class="td-doodle">
+          <svg width="52" height="44" viewBox="0 0 52 44">
+            <rect x="10" y="6" width="32" height="32" rx="0" fill="none" stroke="#888884" stroke-width="0.8"/>
+            <line x1="10" y1="6" x2="42" y2="38" stroke="#1A1A1A" stroke-width="0.7"/>
+            <line x1="42" y1="6" x2="10" y2="38" stroke="#1A1A1A" stroke-width="0.7"/>
+            <rect x="20" y="16" width="12" height="12" rx="0" fill="#F8F7F4" stroke="#1A1A1A" stroke-width="0.8"/>
+            <line x1="4" y1="22" x2="10" y2="22" stroke="#1A1A1A" stroke-width="0.8"/>
+            <line x1="42" y1="22" x2="48" y2="22" stroke="#1A1A1A" stroke-width="0.8"/>
+            <circle cx="4" cy="22" r="1.5" fill="#1A1A1A"/>
+            <circle cx="48" cy="22" r="1.5" fill="#1A1A1A"/>
+          </svg>
+        </div>
+        <div class="td-title">Bespoke &amp; Custom</div>
+        <div class="td-desc">Full design-to-delivery customisation. Clients bring a brief — we engineer the carpet. Flat weaves, dhurries, kilims, and original constructions produced to exact specification for any market.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 GENERATIONS -->
+  <div class="gen-band">
+    <div>
+      <div class="gen-num">5</div>
+      <div class="gen-label">Generations</div>
+    </div>
+    <div class="gen-divider"></div>
+    <div>
+      <div class="gen-title">A craft passed down, not taught.</div>
+      <div class="gen-body">Five generations of our family have worked these looms. What we know about carpet making was not learned in a classroom — it was absorbed through decades of daily practice, passed from master to apprentice, generation after generation. That depth of knowledge is what separates ICMI from a factory. We are a craft house that manufactures at scale.</div>
+    </div>
+  </div>
+
+  <!-- MOTTO -->
+  <div class="motto">
+    <div class="motto-text">"Weaving the Future on the Loom of Today."</div>
+    <div class="motto-rule"></div>
+  </div>
+
+  <!-- CAPABILITY -->
+  <div class="sec">
+    <div class="ey">Capability</div>
+    <div class="sh">End-to-end.</div>
+    <div class="sh-light">Design to delivery.</div>
+    <div class="bp">We manage the full production chain — design consultation, material sourcing, manufacturing, quality inspection, and export logistics. Our leadership combines deep technical craft knowledge with commercial and contractual expertise.</div>
+    <div class="bp">Built to absorb contract volume. Built to maintain quality. Built to export.</div>
+  </div>
+
+  <!-- STUDIO INC -->
+  <div class="studio">
+    <div class="st-wrap">
+      <div class="st-stroke"></div>
+      <div class="st">STUDIO INC.</div>
+      <div class="st-stroke"></div>
+    </div>
+    <div class="ss">By ICMI</div>
+    <div class="sd">Our direct-to-consumer platform. The same craft, the same production standards — available to individual buyers, architects, and interior professionals worldwide.</div>
+    <div class="pills">
+      <span class="pill">Custom Orders</span>
+      <span class="pill">Curated Collections</span>
+      <span class="pill">Direct Shipping</span>
+      <span class="pill">Trade Enquiries</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="ct">Ready to source</div>
+    <div class="ct-light">from India's craft heritage?</div>
+    <div class="cs">Export contracts · Wholesale · Custom briefs</div>
+    <div>
+      <a href="mailto:info@icmi.in" class="btn solid">Request a Quote</a>
+      <a href="#" class="btn outline">Certifications</a>
+    </div>
+    <div class="foot">Indian Carpet Manufacturing Industries · Crafted in India · Built for the World</div>
+  </div>
+
+</div>
+</body>
+</html>
